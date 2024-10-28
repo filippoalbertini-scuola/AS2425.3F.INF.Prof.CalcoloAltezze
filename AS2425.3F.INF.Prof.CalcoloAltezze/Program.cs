@@ -13,7 +13,21 @@
             Console.WriteLine("Prof;3F;28/10/24;Calcolo altezze con somma e media");
 
             Console.WriteLine("Digita il numero di altezze da inserire");
-            int numeroAltezze = Convert.ToInt32(Console.ReadLine());
+            string? s = Console.ReadLine();
+            int numeroAltezze = 0;
+
+            if (int.TryParse(s, out numeroAltezze) == false)
+            {
+                Console.WriteLine("Numero inserito non corretto");
+                return;
+            }
+
+            if (numeroAltezze < 0)
+            {
+                Console.WriteLine("Non possono essere accettati numeri negativi");
+                return;
+            }
+
 
             // posiziono e dichiaro l'accumulatore (assolutamente nn dentro il ciclo !!!)
             double sommaAltezze = 0;
@@ -21,7 +35,7 @@
             for (int i = 0; i < numeroAltezze; i++)
             {
 
-                Console.WriteLine($"Digita la {i+1} altezza  (mt)");
+                Console.WriteLine($"Digita l'altezza n.ro {i+1} in (mt)");
                 double altezza = Convert.ToDouble(Console.ReadLine());
 
                 sommaAltezze = sommaAltezze + altezza;
