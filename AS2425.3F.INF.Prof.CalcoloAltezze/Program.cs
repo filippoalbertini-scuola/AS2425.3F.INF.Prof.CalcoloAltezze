@@ -16,6 +16,8 @@
             string? s = Console.ReadLine();
             int numeroAltezze = 0;
 
+            
+
             if (int.TryParse(s, out numeroAltezze) == false)
             {
                 Console.WriteLine("Numero inserito non corretto");
@@ -44,7 +46,9 @@
             }
 
             // Output
+
             Console.WriteLine($"La somma delle altezze è {sommaAltezze} di {numeroAltezze}");
+            Console.WriteLine($"La media delle altezze è {sommaAltezze / numeroAltezze}");
         }
     }
 }
